@@ -18,8 +18,13 @@
 
 本模块计算如下两个标准菲涅尔积分：
 
-- \(S(x) = \int_0^x \sin\left(\frac{\pi}{2} t^2\right) dt\)
-- \(C(x) = \int_0^x \cos\left(\frac{\pi}{2} t^2\right) dt\)
+$$
+S(x) = \int_0^x \sin\left(\frac{\pi}{2} t^2\right) dt
+$$
+
+$$
+C(x) = \int_0^x \cos\left(\frac{\pi}{2} t^2\right) dt
+$$
 
 ### 计算策略
 
@@ -27,6 +32,13 @@
 
 1. **小/中参数区 (\(|x|^2 < 2.5625\))**：使用有理多项式（连分式）进行幂级数逼近。
 2. **大参数区 (\(2.5625 \le |x|^2 \le 36974^2\))**：使用渐近辅助函数 \(f(x)\) 和 \(g(x)\) 展开：
-   - \(C(x) = \frac{1}{2} + f(x) \sin\left(\frac{\pi}{2} x^2\right) - g(x) \cos\left(\frac{\pi}{2} x^2\right)\)
-   - \(S(x) = \frac{1}{2} - f(x) \cos\left(\frac{\pi}{2} x^2\right) - g(x) \sin\left(\frac{\pi}{2} x^2\right)\)
+   
+   $$
+   C(x) = \frac{1}{2} + f(x) \sin\left(\frac{\pi}{2} x^2\right) - g(x) \cos\left(\frac{\pi}{2} x^2\right)
+   $$
+   
+   $$
+   S(x) = \frac{1}{2} - f(x) \cos\left(\frac{\pi}{2} x^2\right) - g(x) \sin\left(\frac{\pi}{2} x^2\right)
+   $$
+   
 3. **超大参数区 (\(|x| > 36974\))**：积分值逼近极限常数 \(0.5\)。
